@@ -42,7 +42,7 @@ def pearson_correlation(D, w=None):
     """
     # unweighted correlation
     if w is None:
-        R = np.corrcoef(D)
+        R = 1 - distance.cdist(D,D,'correlation')
 
         # weighted correlation
     else:
